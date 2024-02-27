@@ -25,9 +25,10 @@ namespace POO
         public string calcularPagoAutobus(int number_students_assists)
         {
             string message = "";
-            if(number_students_assists >= 100) return message = "El pago por estudiante es de: 65";
-            if(number_students_assists >= 50 && number_students_assists<=99) return message = "El pago por estudiante es de: 70";
-            if(number_students_assists >= 30 && number_students_assists<=49) return message = "El pago por estudiante es de: 95";
+            if(number_students_assists >= 100) message = "El pago por estudiante es de: 65";
+            if(number_students_assists >= 50 && number_students_assists<=99) message = "El pago por estudiante es de: 70";
+            if(number_students_assists >= 30 && number_students_assists<=49) message = "El pago por estudiante es de: 95";
+            return message;
         }
     }
 }

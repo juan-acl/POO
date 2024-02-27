@@ -14,10 +14,12 @@ namespace POO
             Console.Clear();
             Console.WriteLine("-----Menu de opciones-----");
             Console.WriteLine("1. Pago de viaje de estudios.");
+            Console.WriteLine("2. Cantidad de billetes.");
             Dictionary<int, Action> listOptions = new Dictionary<int, Action>();
             int option = int.Parse(Console.ReadLine());
             listOptions[0] = Exit;
             listOptions[1] = Payments;
+            listOptions[2] = QuatityBills;
             listOptions[option]();
             if (option != 0) Menu();
         }
@@ -30,6 +32,22 @@ namespace POO
             csPagoAutobus pagoEstudents = new csPagoAutobus();
             pagoEstudents.SetStudentsPay(input_students);
             Console.WriteLine(pagoEstudents.calcularPagoAutobus(input_students));
+            Console.ReadKey();
+        }
+        static void QuatityBills()
+        {
+            Console.Clear();
+            Console.WriteLine("-----Cantidad de billetes-----");
+            Console.WriteLine("Ingrese la cantidad de dinero");
+            int input_quantity = int.Parse(Console.ReadLine());
+            csDinero quatityBills = new csDinero();
+            int[] bills = quatityBills.calcularBilletes(input_quantity);
+            Console.WriteLine("Cantidad de billetes de 100: " + bills[0]);
+            Console.WriteLine("Cantidad de billetes de 50: " + bills[1]);
+            Console.WriteLine("Cantidad de billetes de 20: " + bills[2]);
+            Console.WriteLine("Cantidad de billetes de 10: " + bills[3]);
+            Console.WriteLine("Cantidad de billetes de 5: " + bills[4]);
+            Console.WriteLine("Cantidad de billetes de 1: " + bills[5]);
             Console.ReadKey();
         }
         static void Exit()
