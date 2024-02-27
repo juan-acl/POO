@@ -17,6 +17,7 @@ namespace POO
             Console.WriteLine("2. Cantidad de billetes.");
             Console.WriteLine("3. Verificar si un numero es perfecto.");
             Console.WriteLine("4. Verificar la persona de menor edad.");
+            Console.WriteLine("5. Verificar si un numero es entero es positivo/negativo.");
             Console.WriteLine("0. Salir.");
             Dictionary<int, Action> listOptions = new Dictionary<int, Action>();
             int option = int.Parse(Console.ReadLine());
@@ -25,6 +26,7 @@ namespace POO
             listOptions[2] = QuatityBills;
             listOptions[3] = NumberPerfect;
             listOptions[4] = Ages;
+            listOptions[5] = SighNumber;
             listOptions[option]();
             if (option != 0) Menu();
         }
@@ -88,6 +90,16 @@ namespace POO
                 new csPersona{age= input_age3, name = input_name3 }
             };
             Console.WriteLine(menorEdad.calcularEdad(csPerson));
+            Console.ReadKey();
+        }
+        static void SighNumber()
+        {
+            Console.Clear();
+            Console.WriteLine("-----Numero positivo/negativo-----");
+            Console.WriteLine("Ingrese un numero");
+            int input_number = int.Parse(Console.ReadLine());
+            csEntero type_number = new csEntero();
+            Console.WriteLine(type_number.calcularPositivo(input_number));
             Console.ReadKey();
         }
         static void Exit()
