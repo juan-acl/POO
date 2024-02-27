@@ -42,12 +42,11 @@ namespace POO
             int input_quantity = int.Parse(Console.ReadLine());
             csDinero quatityBills = new csDinero();
             int[] bills = quatityBills.calcularBilletes(input_quantity);
-            Console.WriteLine("Cantidad de billetes de 100: " + bills[0]);
-            Console.WriteLine("Cantidad de billetes de 50: " + bills[1]);
-            Console.WriteLine("Cantidad de billetes de 20: " + bills[2]);
-            Console.WriteLine("Cantidad de billetes de 10: " + bills[3]);
-            Console.WriteLine("Cantidad de billetes de 5: " + bills[4]);
-            Console.WriteLine("Cantidad de billetes de 1: " + bills[5]);
+            string[] numbers = { "100", "50", "20", "10", "5", "1" };
+            for(int i = 0; bills.Length < 6; i++)
+            {
+                Console.WriteLine("Cantiad de billetes de " + numbers[i] + " :" + bills[i]);
+            }
             Console.ReadKey();
         }
         static void Exit()
