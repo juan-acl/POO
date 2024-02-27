@@ -19,6 +19,10 @@ namespace POO
             Console.WriteLine("4. Verificar la persona de menor edad.");
             Console.WriteLine("5. Verificar si un numero es entero es positivo/negativo.");
             Console.WriteLine("6. Calcular el volumen de un cilindro.");
+            Console.WriteLine("7. Equipo ganador.");
+            Console.WriteLine("8. MCD.");
+            Console.WriteLine("9. Serie de fibonacci.");
+            Console.WriteLine("10. Tabla de multiplicacion.");
             Console.WriteLine("0. Salir.");
             Dictionary<int, Action> listOptions = new Dictionary<int, Action>();
             int option = int.Parse(Console.ReadLine());
@@ -29,6 +33,10 @@ namespace POO
             listOptions[4] = Ages;
             listOptions[5] = SignNumber;
             listOptions[6] = Volumen;
+            listOptions[7] = Winner;
+            listOptions[8] = MCD;
+            listOptions[9] = Fibonacci;
+            listOptions[10] = TableMultiplication;
             listOptions[option]();
             if (option != 0) Menu();
         }
@@ -115,6 +123,39 @@ namespace POO
             csVolumen volumenCilindro = new csVolumen();
             Console.WriteLine("El volumen del radio es de: " + volumenCilindro.calcularVolumen(input_radio, input_height) + " unidades");
             Console.ReadKey();
+        }
+        static void Winner()
+        {
+            Console.Clear();
+            Console.WriteLine("-----Equipo ganador-----");
+            int[] scores = new int[2];
+            string[] names = new string[2];
+            Console.WriteLine("Ingrese el nombre del primer equipo");
+            names[0] = Console.ReadLine();
+            Console.WriteLine("Ingrese el puntaje del primer equipo");
+            scores[0] = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el nombre del segundo equipo");
+            names[1] = Console.ReadLine();
+            Console.WriteLine("Ingrese el puntaje del segundo equipo");
+            scores[1] = int.Parse(Console.ReadLine());
+            csEquipo winner_team = new csEquipo();
+            Console.WriteLine(winner_team.calcularMarcador(scores, names));
+            Console.ReadKey();
+        }
+        static void MCD()
+        {
+            Console.Clear();
+            Console.WriteLine("-----MCD-----");
+            Console.WriteLine("Ingrese el primer numero");
+
+        }
+        static void Fibonacci()
+        {
+
+        }
+        static void TableMultiplication()
+        {
+
         }
         static void Exit()
         {
