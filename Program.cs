@@ -15,11 +15,16 @@ namespace POO
             Console.WriteLine("-----Menu de opciones-----");
             Console.WriteLine("1. Pago de viaje de estudios.");
             Console.WriteLine("2. Cantidad de billetes.");
+            Console.WriteLine("3. Verificar si un numero es perfecto.");
+            Console.WriteLine("4. Verificar la persona de menor edad.");
+            Console.WriteLine("0. Salir.");
             Dictionary<int, Action> listOptions = new Dictionary<int, Action>();
             int option = int.Parse(Console.ReadLine());
             listOptions[0] = Exit;
             listOptions[1] = Payments;
             listOptions[2] = QuatityBills;
+            listOptions[3] = NumberPerfect;
+            listOptions[4] = Ages;
             listOptions[option]();
             if (option != 0) Menu();
         }
@@ -47,6 +52,42 @@ namespace POO
             {
                 Console.WriteLine("Cantiad de billetes de " + numbers[i] + " :" + bills[i]);
             }
+            Console.ReadKey();
+        }
+        static void NumberPerfect()
+        {
+            Console.Clear();
+            Console.WriteLine("-----Numero perfecto-----");
+            Console.WriteLine("Ingrese un numero");
+            int input_number = int.Parse(Console.ReadLine());
+            csPerfecto number_perfect = new csPerfecto();
+            Console.WriteLine(number_perfect.calcularPerfecto(input_number) ? "El número es perfecto" : "El número no es perfecto");
+            Console.ReadKey();
+        }
+        static void Ages()
+        {
+            Console.Clear();
+            Console.WriteLine("-----Edad de una persona menor-----");
+            Console.WriteLine("Ingrese la edad de la primera persona");
+            int input_age1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el nombre de la primera persona");
+            string input_name1 = Console.ReadLine();
+            Console.WriteLine("Ingrese la edad de la segunda persona");
+            int input_age2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el nombre de la segunda persona");
+            string input_name2 = Console.ReadLine();
+            Console.WriteLine("Ingrese la edad de la tercera persona");
+            int input_age3 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el nombre de la tercera persona");
+            string input_name3 = Console.ReadLine();
+            csEdad menorEdad = new csEdad();
+            csPersona[] csPerson = new csPersona[] // Creacion de un array de objetos de la clase csPersona
+            {
+                new csPersona{age= input_age1, name = input_name1 },
+                new csPersona{age= input_age2, name = input_name2 },
+                new csPersona{age= input_age3, name = input_name3 }
+            };
+            Console.WriteLine(menorEdad.calcularEdad(csPerson));
             Console.ReadKey();
         }
         static void Exit()
