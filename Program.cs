@@ -18,6 +18,7 @@ namespace POO
             Console.WriteLine("3. Verificar si un numero es perfecto.");
             Console.WriteLine("4. Verificar la persona de menor edad.");
             Console.WriteLine("5. Verificar si un numero es entero es positivo/negativo.");
+            Console.WriteLine("6. Calcular el volumen de un cilindro.");
             Console.WriteLine("0. Salir.");
             Dictionary<int, Action> listOptions = new Dictionary<int, Action>();
             int option = int.Parse(Console.ReadLine());
@@ -26,7 +27,8 @@ namespace POO
             listOptions[2] = QuatityBills;
             listOptions[3] = NumberPerfect;
             listOptions[4] = Ages;
-            listOptions[5] = SighNumber;
+            listOptions[5] = SignNumber;
+            listOptions[6] = Volumen;
             listOptions[option]();
             if (option != 0) Menu();
         }
@@ -92,7 +94,7 @@ namespace POO
             Console.WriteLine(menorEdad.calcularEdad(csPerson));
             Console.ReadKey();
         }
-        static void SighNumber()
+        static void SignNumber()
         {
             Console.Clear();
             Console.WriteLine("-----Numero positivo/negativo-----");
@@ -100,6 +102,18 @@ namespace POO
             int input_number = int.Parse(Console.ReadLine());
             csEntero type_number = new csEntero();
             Console.WriteLine(type_number.calcularPositivo(input_number));
+            Console.ReadKey();
+        }
+        static void Volumen()
+        {
+            Console.Clear();
+            Console.WriteLine("-----Volumen de un cilindro-----");
+            Console.WriteLine("Ingrese el radio del cilindro");
+            double input_radio = double.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la altura del cilindro");
+            double input_height = double.Parse(Console.ReadLine());
+            csVolumen volumenCilindro = new csVolumen();
+            Console.WriteLine("El volumen del radio es de: " + volumenCilindro.calcularVolumen(input_radio, input_height) + " unidades");
             Console.ReadKey();
         }
         static void Exit()
