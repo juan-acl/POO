@@ -146,8 +146,11 @@ namespace POO
         {
             Console.Clear();
             Console.WriteLine("-----MCD-----");
-            Console.WriteLine("Ingrese el primer numero");
-
+            Console.WriteLine("Ingrese el numero numero");
+            int input_number = int.Parse(Console.ReadLine());
+            csMCD mcd = new csMCD();
+            Console.WriteLine("El MCD del numero" + input_number + " es: " + mcd.calcularMCD(input_number));
+            Console.ReadKey();
         }
         static void Fibonacci()
         {
