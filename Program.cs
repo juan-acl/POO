@@ -154,7 +154,18 @@ namespace POO
         }
         static void Fibonacci()
         {
-
+            Console.Clear();
+            Console.WriteLine("-----Serie de fibonacci-----");
+            Console.WriteLine("Ingrese el numero de elementos de la serie");
+            int input_number = int.Parse(Console.ReadLine());
+            csFibonacci fibonacci = new csFibonacci();
+            int[] serie = fibonacci.Fibonacci(input_number);
+            Console.WriteLine("Los numero de la serie son los siguientes");
+            foreach (int numero in serie) 
+            {
+                Console.Write(numero + " ");
+            }
+            Console.ReadKey();
         }
         static void TableMultiplication()
         {

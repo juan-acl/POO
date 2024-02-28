@@ -47,6 +47,7 @@
     <Compile Include="csEdad.cs" />
     <Compile Include="csEntero.cs" />
     <Compile Include="csEquipo.cs" />
+    <Compile Include="csFibonacci.cs" />
     <Compile Include="csMCD.cs" />
     <Compile Include="csPagoAutobus.cs" />
     <Compile Include="csPerfecto.cs" />
