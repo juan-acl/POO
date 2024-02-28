@@ -169,7 +169,26 @@ namespace POO
         }
         static void TableMultiplication()
         {
+            Console.Clear();
+            Console.WriteLine("-----Tabla de multiplicacion-----");
+            Console.WriteLine("Ingrese el numero hasta donde quiere visualizar la tabla de multiplicar.");
+            int input_number = int.Parse(Console.ReadLine());
+            csTabla tablaMultiplicacion = new csTabla();
+            int[,] table = tablaMultiplicacion.GenerateTable(input_number);
+            PrintTable(table);
 
+        }
+        static void PrintTable(int[,] table)
+        {
+            for (int i = 1; i <= table.GetLength(0); i++)
+            {
+                for (int j = 1; j <= table.GetLength(1); j++)
+                {
+                    Console.Write(i + " X " + j + " = " + table[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
         }
         static void Exit()
         {

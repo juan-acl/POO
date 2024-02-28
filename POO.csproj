@@ -52,6 +52,7 @@
     <Compile Include="csPagoAutobus.cs" />
     <Compile Include="csPerfecto.cs" />
     <Compile Include="csPersona.cs" />
+    <Compile Include="csTabla.cs" />
     <Compile Include="csVolumen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
