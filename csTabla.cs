@@ -8,15 +8,12 @@ namespace POO
 {
     internal class csTabla
     {
-        public int[,] GenerateTable(int rows)
+        public int[] GenerateTable(int baseNumber)
         {
-            int[,] table = new int[9, 9];
-            for (int i = 1; i < 10; i++)
+            int[] table = new int[10];
+            for (int i = 0; i < 10; i++)
             {
-                for (int j = 1; j < 10; j++)
-                {
-                    table[i, j] = (i ) * (j );
-                }
+                table[i] = baseNumber * (i + 1);
             }
             return table;
         }

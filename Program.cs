@@ -59,13 +59,14 @@ namespace POO
             int input_quantity = int.Parse(Console.ReadLine());
             csDinero quatityBills = new csDinero();
             int[] bills = quatityBills.calcularBilletes(input_quantity);
-            string[] numbers = { "100", "50", "20", "10", "5", "1" };
-            for(int i = 0; bills.Length < 6; i++)
+            int[] numbers = { 100, 50, 20, 10, 5, 1 };
+            for (int i = 0; i < 6; i++)
             {
-                Console.WriteLine("Cantiad de billetes de " + numbers[i] + " :" + bills[i]);
+                Console.WriteLine("Cantidad de billetes de " + numbers[i] + " : " + bills[i]);
             }
             Console.ReadKey();
         }
+
         static void NumberPerfect()
         {
             Console.Clear();
@@ -171,22 +172,18 @@ namespace POO
         {
             Console.Clear();
             Console.WriteLine("-----Tabla de multiplicacion-----");
-            Console.WriteLine("Ingrese el numero hasta donde quiere visualizar la tabla de multiplicar.");
+            Console.WriteLine("Ingrese el numero de la tabla de multiplicar.");
             int input_number = int.Parse(Console.ReadLine());
             csTabla tablaMultiplicacion = new csTabla();
-            int[,] table = tablaMultiplicacion.GenerateTable(input_number);
-            PrintTable(table);
-
+            int[] table = tablaMultiplicacion.GenerateTable(input_number);
+            PrintTable(table, input_number);
         }
-        static void PrintTable(int[,] table)
+        static void PrintTable(int[] table, int baseNumber)
         {
-            for (int i = 1; i <= table.GetLength(0); i++)
+            Console.WriteLine("Tabla de multiplicar del " + baseNumber + ":");
+            for (int i = 0; i < table.Length; i++)
             {
-                for (int j = 1; j <= table.GetLength(1); j++)
-                {
-                    Console.Write(i + " X " + j + " = " + table[i, j] + " ");
-                }
-                Console.WriteLine();
+                Console.WriteLine(baseNumber + " X " + (i + 1) + " = " + table[i]);
             }
             Console.ReadKey();
         }
